@@ -3,15 +3,16 @@ body{
 	padding: 0;
 }
 
-nav{
+.navbar{
 	position: fixed;
 	padding-left:7px;
-	padding-top: 10px;
+	padding-top: 1em;
 	margin:0;
 	height: 150px;
 }
 
 ul{
+	padding-top: 1em;
 	padding: 0;
 	font-size: 16px;
 }
@@ -21,11 +22,11 @@ li{
 	list-style: none;
 }
 
-li#name{
+li.name{
 	padding-bottom: 20px;
 }
 
-li#contact{
+li.contact{
 	padding-top: 20px;
 }
 
@@ -36,26 +37,28 @@ a{
 
 /*slideshow*/
 
-#artwork-wrapper{
-	width:460px;
-	height: 600px;
-	padding-top: 20px;
-	padding-left: 20%;
-}
 
-#artwork{
+.container{
 	width:460px;
 	height: 600px;
 	position: relative;
-	padding-top: 2%;
-	padding-left: 20%;
+	padding-top: 35px;
+	padding-left: 30%;
 	
 }
 
-.current{
+.active{
 	width:460px;
 	height: 600px;
 	position: absolute;
+}
+
+.slide{
+	display:none;
+}
+
+.slide.active{
+	display:block;
 }
 
 img{
@@ -65,48 +68,52 @@ img{
 
 /* left and right arrows */
 
-#arrows{
+.arrows{
 	margin-top: 600px;
 	margin-left: 90%;
 
 }
 
-p#prev{
+.prev{
 	float:left;
 	cursor:pointer;
 }
 
-p#next{
+.next{
 	float:right;
 	cursor:pointer;
 }
 
+.container > .slide::first-of-type.active ~ .arrows > .prev {
+	display:none;
+}
+
+.container > .slide::last-of-type.active ~ .arrows > .next {
+	display: none;}
+
+
 /*videos*/
 
-div#first{
+.first{
 	padding-top: -1px;
 	padding-bottom: 4em;
 }
 
 /*contact*/
 
-#email{
+.email{
 	margin:0;
 
 }
 
-#email img{
+.email img{
 	height:80px;
 	width:100px;
-	margin-top: 20%;
-	margin-left:40%;
+
 }
 
-#email p{
-	margin-left: 40%;
-}
 
-#email p#gmail{
+.email p.gmail{
 	padding: 0;
 
 }
@@ -121,11 +128,11 @@ div#first{
 		font-size: 11px;
 	}
 
-	#artwork{
+	.artwork{
 		padding-left: 15%;
 	}
 
-	#artwork-wrapper{
+	.artwork-wrapper{
 		width:460px;
 		height: 600px;
 		padding: 0;
@@ -138,18 +145,18 @@ div#first{
 		height: 300px;
 	}
 
-	#arrows{
+	.arrows{
 		margin-top: 300px;
 		margin-left:93%;
 	}
 
-	p#next{
+	.next{
 		margin-right: 239px;
 		float:right;
 		cursor: pointer;
 	}
 
-	p#prev{
+	.prev{
 		margin-left: -248px;
 		float:left;
 		cursor: pointer;

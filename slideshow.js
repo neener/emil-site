@@ -1,9 +1,10 @@
 $(document).ready(function(){
+
 $('.current').first().addClass('active');
-$('.current').hide();    
+$('.slide').hide();    
 $('.active').show();
 
-    $('#next').click(function(){
+    $('.next').click(function(){
 
     $('.active').removeClass('active').addClass('oldActive');    
                    if ( $('.oldActive').is(':last-child')) {
@@ -19,7 +20,7 @@ $('.active').show();
         
     });
     
-    $('#prev').click(function(){
+    $('.prev').click(function(){
     $('.active').removeClass('active').addClass('oldActive');    
            if ( $('.oldActive').is(':first-child')) {
         $('.current').last().addClass('active');
