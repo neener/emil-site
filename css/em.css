@@ -40,10 +40,11 @@ a{
 
 .container{
 	width:460px;
-	height: 600px;
+	height: 700px;
 	position: relative;
-	padding-top: 35px;
-	padding-left: 30%;
+	margin-top: 35px;
+	margin-left: 30%;
+	overflow: hidden;
 	
 }
 
@@ -54,11 +55,19 @@ a{
 }
 
 .slide{
-	display:none;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: auto;
+	height: auto;
+	opacity: 0;
+	transition: all 1s;
 }
 
 .slide.active{
 	display:block;
+	left: 0%;
+	opacity: 1;
 }
 
 img{
@@ -69,26 +78,24 @@ img{
 /* left and right arrows */
 
 .arrows{
-	margin-top: 600px;
-	margin-left: 90%;
-
+	left: 0;
+	bottom: 0;
+	height: auto;
+	width: 100%;
+	text-align: right;
+	position: absolute;
 }
 
-.prev{
-	float:left;
+.prev, .next{
+	display: inline-block;
 	cursor:pointer;
 }
 
-.next{
-	float:right;
-	cursor:pointer;
-}
-
-.container > .slide::first-of-type.active ~ .arrows > .prev {
+div.container > div.slide:first-of-type.active ~ .arrows > .prev {
 	display:none;
 }
 
-.container > .slide::last-of-type.active ~ .arrows > .next {
+div.container > div.slide:last-of-type.active ~ .arrows > .next {
 	display: none;}
 
 

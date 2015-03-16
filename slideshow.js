@@ -1,36 +1,29 @@
 $(document).ready(function(){
 
-$('.current').first().addClass('active');
-$('.slide').hide();    
-$('.active').show();
+    var $slides = $('.slide');
+
+    $slides.first().addClass('active');
 
     $('.next').click(function(){
-
-    $('.active').removeClass('active').addClass('oldActive');    
-                   if ( $('.oldActive').is(':last-child')) {
-        $('.current').first().addClass('active');
+        var position = $slides.index($('.slide.active')[0]);
+        if(position < ($slides.length - 1)){
+            $('.slide.active').removeClass('active');
+            $($slides.get(position + 1)).addClass('active');
+        } else{
+            $('.slide.active').removeClass('active');
+            $($slides.get(0)).addClass('active');
         }
-        else{
-        $('.oldActive').next().addClass('active');
-        }
-    $('.oldActive').removeClass('oldActive');
-    $('.current').fadeOut();
-    $('.active').fadeIn();
-        
-        
     });
     
     $('.prev').click(function(){
-    $('.active').removeClass('active').addClass('oldActive');    
-           if ( $('.oldActive').is(':first-child')) {
-        $('.current').last().addClass('active');
+        var position = $slides.index($('.slide.active')[0]);
+        if(position > 0){
+            $('.slide.active').removeClass('active');
+            $($slides.get(position - 1)).addClass('active');
+        } else{
+            $('.slide.active').removeClass('active');
+            $($slides.get(-1)).addClass('active');
         }
-           else{
-    $('.oldActive').prev().addClass('active');
-           }
-    $('.oldActive').removeClass('oldActive');
-    $('.current').fadeOut();
-    $('.active').fadeIn();
     });
       
 });
