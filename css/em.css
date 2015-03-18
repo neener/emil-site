@@ -4,7 +4,7 @@ body{
 }
 
 .navbar{
-	position: fixed;
+	position: absolute;
 	padding-left:7px;
 	padding-top: 1em;
 	margin:0;
@@ -42,10 +42,19 @@ a{
 	width:460px;
 	height: 700px;
 	position: relative;
-	margin-top: 35px;
+	padding-top: 2em;
 	margin-left: 30%;
 	overflow: hidden;
 	
+}
+
+.videos{
+	width:460px;
+	height: 700px;
+	position: relative;
+	padding-top: 2em;
+	margin-left: 30%;
+	overflow: hidden;
 }
 
 .active{
@@ -56,12 +65,14 @@ a{
 
 .slide{
 	position: absolute;
+	padding-top: 2em;
 	top: 0;
 	left: 100%;
 	width: auto;
 	height: auto;
 	opacity: 0;
 	transition: all 1s;
+
 }
 
 .slide.active{
@@ -89,6 +100,7 @@ img{
 .prev, .next{
 	display: inline-block;
 	cursor:pointer;
+	padding: 1em;
 }
 
 div.container > div.slide:first-of-type.active ~ .arrows > .prev {
@@ -127,6 +139,7 @@ div.container > div.slide:last-of-type.active ~ .arrows > .next {
 
 @media screen and (max-width: 556px){
 	
+
 	body{
 		font-size: 11px;
 	}
@@ -134,7 +147,11 @@ div.container > div.slide:last-of-type.active ~ .arrows > .next {
 	ul{
 		font-size: 11px;
 	}
-
+	
+	.container{
+		width:245px;
+		height:350px;
+	}
 	.artwork{
 		padding-left: 15%;
 	}
@@ -152,22 +169,6 @@ div.container > div.slide:last-of-type.active ~ .arrows > .next {
 		height: 300px;
 	}
 
-	.arrows{
-		margin-top: 300px;
-		margin-left:93%;
-	}
-
-	.next{
-		margin-right: 239px;
-		float:right;
-		cursor: pointer;
-	}
-
-	.prev{
-		margin-left: -248px;
-		float:left;
-		cursor: pointer;
-	}
 }
 
 
